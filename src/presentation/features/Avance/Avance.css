@@ -1,0 +1,55 @@
+/* Avance.ccss */
+
+.avance-section {
+   padding: 2rem !important;
+    background-color: white;
+    text-align: center;
+}
+
+.avance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.avance-card {
+    width: 15rem !important;
+    background: white!important;
+    border-radius: 1rem!important;
+    padding: 1.5rem!important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)!important;
+    transition: transform 0.3s ease!important;
+}
+
+.avance-card:hover {
+    transform: translateY(-5px)!important;
+}
+
+.avance-card img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.avance-card h3 {
+    color: var(--color);
+    margin-bottom: 1rem;
+}
+
+.barra {
+    width: 100%;
+    background: #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 12px;
+    margin-bottom: 0.5rem;
+}
+
+.progreso {
+    height: 100%;
+    background: var(--color-vino);
+    width: 0;
+    transition: width 1.5s ease-out;
+}

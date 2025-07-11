@@ -1,0 +1,69 @@
+:root {
+  --color-vino: #901b45;
+  --color-mostaza: #c6943d;
+  --color-fondo: #fef9ec;
+  --color-blanco: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--color-blanco);
+  color: #333;
+}
+
+/* color de las titulos del navbar */
+.navbar-nav a {
+  color: var(--color-vino) !important;
+}
+
+/* color de fondo del navbar */
+.bg-body-tertiary.navbar {
+  background-color: var(--color-fondo) !important;
+}
+
+h2.centrado {
+  text-align: center;
+}
+
+
+footer {
+  background: var(--color-vino);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.logo-img {
+  max-width: 50%;
+  height: auto;
+}
+
+section:not(.hero) {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.title-section {
+  text-align: center;
+  color: var(--color-mostaza);
+}
+
+.button-btn-vino {
+  background-color: var(--color-vino);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.button-btn-vino:hover {
+  background-color: #6d1233;
+}

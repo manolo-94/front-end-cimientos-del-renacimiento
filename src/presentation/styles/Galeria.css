@@ -1,0 +1,25 @@
+/* Galería en el popup */
+.container-galery-contador-popup {
+    text-align: center; 
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.container-images-swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-image-popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-style-popup {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}

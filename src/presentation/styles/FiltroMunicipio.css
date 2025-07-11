@@ -1,0 +1,76 @@
+/* Inicio Estilos para el contenedor de filtros */
+
+.filter-container {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1001;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(3px);
+}
+
+#clear-filters {
+    margin-top: 10px;
+    background-color: var(--color-vino);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#clear-filters:hover {
+    background-color: #6d1233;
+}
+
+/* Ocultar por defecto en pantallas pequeñas */
+@media (max-width: 768px) {
+  .filter-container {
+    display: none;
+  }
+
+  .filter-container.show {
+    display: block;
+  }
+
+  .toggle-filter-btn {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    z-index: 1000;
+    background-color: var(--color-vino);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .close-filter-btn{
+    display: block;
+    float: right;
+    background: var(--color-vino);
+    color: white;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+}
+}
+
+/* En pantallas grandes, ocultar el botón */
+@media (min-width: 769px) {
+  .toggle-filter-btn {
+    display: none;
+  }
+
+  .close-filter-btn{
+    display: none;
+  }
+}
+
+/* Finaliza Estilos para el contenedor de filtros */

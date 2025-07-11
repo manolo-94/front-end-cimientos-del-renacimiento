@@ -1,0 +1,9 @@
+.title-vino {
+  font-size: 25px !important;
+  color: var(--color-vino);
+}
+
+.title-mostaza {
+  font-size: 25px !important;
+  color: var(--color-mostaza);
+}

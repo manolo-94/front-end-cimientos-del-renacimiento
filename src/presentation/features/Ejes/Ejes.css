@@ -1,0 +1,30 @@
+/* Ejes.css */
+
+.ejes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.card-eje {
+  width: 15rem !important;
+  background: white !important;
+  border-radius: 1rem !important;
+  padding: 2rem !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+  transition: transform 0.3s !important;
+}
+
+.card-eje:hover {
+  transform: translateY(-5px) !important;
+}
+
+.card-eje-title {
+  color: var(--color-vino) !important;
+}
+
+.card-eje-description {
+  color: #333 !important;
+}
