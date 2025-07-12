@@ -8,6 +8,7 @@ import { getMunicipios } from "../../domain/services/municipioService";
 import '../styles/TablaMunicipiosConObras.css'
 import ModalObrasPorMunicipio from "./ModalObrasPorMunicipio";
 import InputFiltroTabla from "./InputFiltroTabla";
+import PaginacionTabla from "./PaginacionTabla";
 
 const TablaMunicipiosConObras: React.FC = () => {
 
@@ -96,21 +97,14 @@ const TablaMunicipiosConObras: React.FC = () => {
           ))}
         </tbody>
         <tfoot>
-          <tr>
-            <td colSpan={3}>
-              <div className="paginacion">
-                <button onClick={() => setPaginaActual(paginaActual - 1)} disabled={paginaActual === 1}>
-                  Anterior
-                </button>
-                <span>
-                  Página {paginaActual} de {totalPaginas}
-                </span>
-                <button onClick={() => setPaginaActual(paginaActual + 1)} disabled={paginaActual === totalPaginas}>
-                  Siguiente
-                </button>
-              </div>
-            </td>
-          </tr>
+
+          <PaginacionTabla
+            paginaActual={paginaActual}
+            totalPaginas={totalPaginas}
+            onPaginaAnterior={() => setPaginaActual(paginaActual - 1)}
+            onPaginaSiguiente={() => setPaginaActual(paginaActual + 1)}
+          />
+
         </tfoot>
       </Table>
       <ModalObrasPorMunicipio
