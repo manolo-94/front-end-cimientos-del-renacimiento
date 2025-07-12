@@ -7,6 +7,7 @@ import type { Obra } from "../../domain/models/Obra";
 import { getMunicipios } from "../../domain/services/municipioService";
 import '../styles/TablaMunicipiosConObras.css'
 import ModalObrasPorMunicipio from "./ModalObrasPorMunicipio";
+import InputFiltroTabla from "./InputFiltroTabla";
 
 const TablaMunicipiosConObras: React.FC = () => {
 
@@ -64,23 +65,13 @@ const TablaMunicipiosConObras: React.FC = () => {
   return (
 
     <>
-      <input
-        type="text"
-        placeholder="Buscar municipio..."
-        value={busqueda}
-        onChange={(e) => {
-          setBusqueda(e.target.value);
-          setPaginaActual(1); // Reiniciar a la primera página al buscar
-        }}
-        style={{
-          marginBottom: "10px",
-          padding: "6px 12px",
-          width: "100%",
-          maxWidth: "300px",
-          border: "1px solid #ccc",
-          borderRadius: "4px"
-        }}
-      />
+
+      <InputFiltroTabla
+        busqueda={busqueda}
+        onChange={(nuevoValor) => {
+          setBusqueda(nuevoValor);
+          setPaginaActual(1);
+        }} />
 
       <Table striped bordered hover className="tabla-municipios-obras">
         <thead>
