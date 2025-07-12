@@ -1,13 +1,13 @@
 import React from "react";
 import TitleSection from "../../components/TitleSection";
-import TablaMunicipios from "../../components/TablaMunicipios";
+import TablaMunicipiosConObras from "../../components/TablaMunicipiosConObras";
 
 const Municipios: React.FC = () => {
     return (
         <section id="Municipios">
             <TitleSection title="Municipios con Obras" />
 
-            <TablaMunicipios />
+            <TablaMunicipiosConObras />
         </section>
     );
 };

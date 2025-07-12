@@ -1,0 +1,19 @@
+.tabla-municipios-obras table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-municipios-obras th,
+.tabla-municipios-obras td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.tabla-municipios-obras button {
+  padding: 6px 10px;
+  background-color: var(--color-vino);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
