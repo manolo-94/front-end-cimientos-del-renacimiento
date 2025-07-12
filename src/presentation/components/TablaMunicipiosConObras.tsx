@@ -3,21 +3,23 @@ import { useMemo, useState } from "react";
 import { Table } from "react-bootstrap";
 import useObras from "../../infrastructure/hooks/useObras";
 import useGeoZona from "../../infrastructure/hooks/useGeoZona";
-import type {Obra } from "../../domain/models/Obra";
+import type { Obra } from "../../domain/models/Obra";
 import { getMunicipios } from "../../domain/services/municipioService";
 import '../styles/TablaMunicipiosConObras.css'
+import ModalObrasPorMunicipio from "./ModalObrasPorMunicipio";
 
 const TablaMunicipiosConObras: React.FC = () => {
 
   const { geoData, loading: loadingGeo, error: errorGeo } = useGeoZona()
   const { obras, loading: loadingObras, error: errorObras } = useObras();
   const [municipioSeleccionado, setMunicipioSeleccionado] = useState<string | null>(null);
+  const [obrasMunicipioSeleccionado, setObrasMunicipioSeleccionado] = useState<Obra[] | null>(null);
 
-  const municipiosConObras = useMemo( () => {
-    
+  const municipiosConObras = useMemo(() => {
+
     if (!geoData || !obras) return [];
 
-    const obrasPorMunicipio: Record<string, Obra[]> = {}; 
+    const obrasPorMunicipio: Record<string, Obra[]> = {};
 
     for (const obra of obras) {
       const municipio = obra.nombre_municipio;
@@ -27,7 +29,7 @@ const TablaMunicipiosConObras: React.FC = () => {
       obrasPorMunicipio[municipio].push(obra);
     }
 
-    const municipios = getMunicipios(geoData).map( (municipio) => {
+    const municipios = getMunicipios(geoData).map((municipio) => {
       const nombre = municipio;
       const obrasMunicipio = obrasPorMunicipio[municipio] || [];
 
@@ -38,7 +40,7 @@ const TablaMunicipiosConObras: React.FC = () => {
       }
     })
 
-    return municipios.sort((a,b) => a.nombre.localeCompare(b.nombre));
+    return municipios.sort((a, b) => a.nombre.localeCompare(b.nombre));
 
   }, [geoData, obras])
 
@@ -46,27 +48,28 @@ const TablaMunicipiosConObras: React.FC = () => {
   if (errorGeo || errorObras) return <p>Error al cargar las obras: {errorGeo || errorObras}</p>;
 
   return (
-        
-    <Table striped bordered hover className="tabla-municipios-obras">
-      <thead>
-        <tr>
-          <th>Municipio</th>
-          <th>Total de Obras</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        {municipiosConObras.map( (value, idx) => (
-          <React.Fragment key={idx}>
-            <tr key={idx}>
-              <td>{value.nombre}</td>
-              <td>{value.totalObras}</td>
-              <td>
-                <button className="button-btn-vino" onClick={() => setMunicipioSeleccionado(value.nombre)}>Ver Obras</button>
-              </td>
-            </tr>
 
-            {municipioSeleccionado === value.nombre && (
+    <>
+      <Table striped bordered hover className="tabla-municipios-obras">
+        <thead>
+          <tr>
+            <th>Municipio</th>
+            <th>Total de Obras</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {municipiosConObras.map((value, idx) => (
+            <React.Fragment key={idx}>
+              <tr key={idx}>
+                <td>{value.nombre}</td>
+                <td>{value.totalObras}</td>
+                <td>
+                  <button className="button-btn-vino" onClick={() => { setMunicipioSeleccionado(value.nombre); setObrasMunicipioSeleccionado(value.obras); }}>Ver Obras</button>
+                </td>
+              </tr>
+
+              {/* {municipioSeleccionado === value.nombre && (
               <tr>
                 <td colSpan={3}>
                   <ul>
@@ -79,12 +82,20 @@ const TablaMunicipiosConObras: React.FC = () => {
                   <button onClick={() => setMunicipioSeleccionado(null)}>Cerrar</button>
                 </td>
               </tr>
-            )}
+            )} */}
 
-          </React.Fragment>
-        ))}
-      </tbody>
-    </Table>
+            </React.Fragment>
+          ))}
+        </tbody>
+      </Table>
+      <ModalObrasPorMunicipio
+        isShowing={!!municipioSeleccionado}
+        municipio={municipioSeleccionado || ''}
+        obras={obrasMunicipioSeleccionado || []}
+        onClose={() => setMunicipioSeleccionado(null)}
+      />
+
+    </>
   );
 };
 

@@ -67,3 +67,18 @@ section:not(.hero) {
 .button-btn-vino:hover {
   background-color: #6d1233;
 }
+
+.button-btn-modal-detalle {
+  float: right;
+  background-color: var(--color-vino);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.button-btn-modal-detalle:hover {
+  background-color: #6d1233;
+}
