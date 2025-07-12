@@ -15,6 +15,10 @@ const TablaMunicipiosConObras: React.FC = () => {
   const [municipioSeleccionado, setMunicipioSeleccionado] = useState<string | null>(null);
   const [obrasMunicipioSeleccionado, setObrasMunicipioSeleccionado] = useState<Obra[] | null>(null);
 
+  const [paginaActual, setPaginaActual] = useState<number>(1);
+  const elementosPorPagina = 20;
+  const [busqueda, setBusqueda] = useState("");
+
   const municipiosConObras = useMemo(() => {
 
     if (!geoData || !obras) return [];
@@ -44,12 +48,40 @@ const TablaMunicipiosConObras: React.FC = () => {
 
   }, [geoData, obras])
 
+  const normalizarTexto = (texto: string): string => texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+  const municipiosFiltrados = municipiosConObras.filter((muni) =>
+    normalizarTexto(muni.nombre).includes(normalizarTexto(busqueda))
+  );
+
+  const totalPaginas = Math.ceil(municipiosFiltrados.length / elementosPorPagina)
+
+  const municipiosPorPagina = municipiosFiltrados.slice((paginaActual - 1) * elementosPorPagina, paginaActual * elementosPorPagina);
+
   if (loadingGeo || loadingObras) return <p>Loading...</p>;
   if (errorGeo || errorObras) return <p>Error al cargar las obras: {errorGeo || errorObras}</p>;
 
   return (
 
     <>
+      <input
+        type="text"
+        placeholder="Buscar municipio..."
+        value={busqueda}
+        onChange={(e) => {
+          setBusqueda(e.target.value);
+          setPaginaActual(1); // Reiniciar a la primera página al buscar
+        }}
+        style={{
+          marginBottom: "10px",
+          padding: "6px 12px",
+          width: "100%",
+          maxWidth: "300px",
+          border: "1px solid #ccc",
+          borderRadius: "4px"
+        }}
+      />
+
       <Table striped bordered hover className="tabla-municipios-obras">
         <thead>
           <tr>
@@ -59,7 +91,7 @@ const TablaMunicipiosConObras: React.FC = () => {
           </tr>
         </thead>
         <tbody>
-          {municipiosConObras.map((value, idx) => (
+          {municipiosPorPagina.map((value, idx) => (
             <React.Fragment key={idx}>
               <tr key={idx}>
                 <td>{value.nombre}</td>
@@ -69,24 +101,26 @@ const TablaMunicipiosConObras: React.FC = () => {
                 </td>
               </tr>
 
-              {/* {municipioSeleccionado === value.nombre && (
-              <tr>
-                <td colSpan={3}>
-                  <ul>
-                    {value.obras.map((obra, index) => (
-                      <li key={index}>
-                        <strong key={index}>{obra.nombre_de_obra}</strong> - ejecutaador por {obra.nombre_de_ejecutora}, inversión: ${obra.inversion} - Avance: {obra.avance}%
-                      </li>
-                    ))}
-                  </ul>
-                  <button onClick={() => setMunicipioSeleccionado(null)}>Cerrar</button>
-                </td>
-              </tr>
-            )} */}
-
             </React.Fragment>
           ))}
         </tbody>
+        <tfoot>
+          <tr>
+            <td colSpan={3}>
+              <div className="paginacion">
+                <button onClick={() => setPaginaActual(paginaActual - 1)} disabled={paginaActual === 1}>
+                  Anterior
+                </button>
+                <span>
+                  Página {paginaActual} de {totalPaginas}
+                </span>
+                <button onClick={() => setPaginaActual(paginaActual + 1)} disabled={paginaActual === totalPaginas}>
+                  Siguiente
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tfoot>
       </Table>
       <ModalObrasPorMunicipio
         isShowing={!!municipioSeleccionado}
