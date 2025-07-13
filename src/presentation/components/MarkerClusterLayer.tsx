@@ -55,6 +55,7 @@ const MarkerClusterLayer: React.FC = () => {
                             <b>Inversión: {obra.inversion}</b><br />
                             <b>Avance: {obra.avance} %</b><br />
                             <small>Descripción: {obra.descripcion}</small><br />
+                            {obra.imagenes.length !== 0 ? 
                             <button
                                 onClick={ () => {
                                     setShowModal(true);
@@ -65,6 +66,7 @@ const MarkerClusterLayer: React.FC = () => {
                             >
                                 Ver Imágenes
                             </button>
+                            : <p>No hay imágenes</p>}
                             
                         </Popup>
                     </Marker>
