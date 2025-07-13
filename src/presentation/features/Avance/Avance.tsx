@@ -5,36 +5,36 @@ import logo from "../../../assets/img/logo.png"
 
 const Avance: React.FC = () => {
     return (
-        <section className="avance-section" id="avance">
+        <section className="avance-section" id="Avance">
             <TitleSection title="Avance por entidad" />
-            <div className="avance-grid d-flex flex-wrap justify-content-center gap-4">
+            <div className="avance-grid d-flex flex-wrap justify-content-center gap-7">
 
             <CardAvance
-                img={logo}
+                img={''}
                 title="IDEFEEY"
                 porcentaje={80}
                 descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             />
             <CardAvance
-                img={logo}
+                img={''}
                 title="INCAY"
                 porcentaje={60}
                 descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             />
             <CardAvance
-                img={logo}
+                img={''}
                 title="INCCOPY"
                 porcentaje={40}
                 descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             />
             <CardAvance
-                img={logo}
+                img={''}
                 title="IVEY"
                 porcentaje={20}
                 descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             />
             <CardAvance
-                img={logo}
+                img={''}
                 title="JAPAY"
                 porcentaje={10}
                 descripcion="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."

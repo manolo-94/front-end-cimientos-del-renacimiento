@@ -11,10 +11,12 @@
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+    text-align: center;
 }
 
 .avance-card {
-    width: 15rem !important;
+   max-width:  320px !important;
+    width: 100% !important;
     background: white!important;
     border-radius: 1rem!important;
     padding: 1.5rem!important;
