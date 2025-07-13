@@ -9,7 +9,8 @@
 }
 
 .card-eje {
-  width: 15rem !important;
+  max-width:  320px !important;
+  width: 100% !important;
   background: white !important;
   border-radius: 1rem !important;
   padding: 2rem !important;
@@ -27,4 +28,6 @@
 
 .card-eje-description {
   color: #333 !important;
+  /* word-break: normal;
+  overflow-wrap: break-word; */
 }
