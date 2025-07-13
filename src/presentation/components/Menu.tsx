@@ -22,7 +22,7 @@ const Menu: React.FC = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
                             <Nav.Link href="#Inicio">Inicio</Nav.Link>
-                            <Nav.Link href="#Fideicomiso">¿Que es el Fidecomiso?</Nav.Link>
+                            <Nav.Link href="#Fideicomiso">Cimientos del renacimiento</Nav.Link>
                             <Nav.Link href="#Ejes">Ejes de trabajo</Nav.Link>
                             <Nav.Link href="#Avance">Avance por entidad</Nav.Link>
                             <Nav.Link href="#Mapa">Mapa de obra pública georreferenciada</Nav.Link>
