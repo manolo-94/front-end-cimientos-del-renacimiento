@@ -1,0 +1,11 @@
+/* Estilo para el componente SwiperImage */
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--color-dorado-institucional) !important; /* Cambia este valor por el color institucional */
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: var(--color-dorado-oscuro-institucional) !important;
+}

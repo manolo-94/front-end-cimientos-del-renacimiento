@@ -3,6 +3,10 @@
   --color-mostaza: #c6943d;
   --color-fondo: #fef9ec;
   --color-blanco: #ffffff;
+  --color-dorado-institucional: #C2995C;
+  --color-dorado-oscuro-institucional: #81663f;
+  --color-gris-oscuro-institucional: #2D2829;
+  --color-matiz-azulado: #eef2f5;
 }
 
 * {
@@ -82,3 +86,7 @@ section:not(.hero) {
 .button-btn-modal-detalle:hover {
   background-color: #6d1233;
 }
+
+
+
+

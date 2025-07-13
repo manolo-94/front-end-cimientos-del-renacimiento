@@ -1,4 +1,8 @@
 /* Galería en el popup */
+.modal-header {
+    background-color: var(--color-matiz-azulado);
+}
+
 .container-galery-contador-popup {
     text-align: center; 
     margin-bottom: 10px;
@@ -23,3 +27,5 @@
     object-fit: contain;
     border-radius: 8px;
 }
+
+
