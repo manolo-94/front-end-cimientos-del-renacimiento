@@ -8,7 +8,7 @@ const Georeferencia: React.FC = () => {
 
     return (
         <section id="Mapa">
-            <TitleSection title="Mapa de Obras Públicas Georeferenciadas" />
+            <TitleSection title="Mapa de obra pública georreferenciada" />
 
             <MapaObras />
         </section>

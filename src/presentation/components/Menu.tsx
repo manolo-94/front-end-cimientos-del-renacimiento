@@ -25,7 +25,7 @@ const Menu: React.FC = () => {
                             <Nav.Link href="#Fideicomiso">¿Que es el Fidecomiso?</Nav.Link>
                             <Nav.Link href="#Ejes">Ejes de trabajo</Nav.Link>
                             <Nav.Link href="#Avance">Avance por entidad</Nav.Link>
-                            <Nav.Link href="#Mapa">Mapa de obra pública georefereciada</Nav.Link>
+                            <Nav.Link href="#Mapa">Mapa de obra pública georreferenciada</Nav.Link>
                             <Nav.Link href="#Municipios">Municipios con obras</Nav.Link>
                             <Nav.Link href="#Transparencia">Transparencia</Nav.Link>
                         </Nav>
