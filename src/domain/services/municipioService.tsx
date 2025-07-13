@@ -59,7 +59,7 @@ export const getStyleFiltroMuncipio = (feature: any, municipioSeleccionado: stri
     const isSelected = feature.properties?.NOMGEO === municipioSeleccionado;
 
     const styleFiltroMunicipio = {
-        color: isSelected ? 'yellow' : 'var(--color-vino)',
+        color: isSelected ? 'yellow' : 'var(--color-matiz-azulado)',
         weight: isSelected ? 3 : 2,
         fillOpacity: isSelected ? 0.7 : 0.5,
         fillColor: isSelected ? "#ffff00" : "var(--color-mostaza)",

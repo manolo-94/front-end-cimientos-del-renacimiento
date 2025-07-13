@@ -24,7 +24,7 @@ const MarkerClusterLayer: React.FC = () => {
 
         return L.divIcon({
             html: `
-                <div class="custom-cluster-vino-primario">
+                <div class="custom-cluster-verde">
                 ${count}
              </div>
              `,
