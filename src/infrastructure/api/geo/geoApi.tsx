@@ -7,7 +7,8 @@
  * @throws An error if the request fails.
  */
 const fetchZonasGeoZone = async (): Promise<any> => {
-    const response = await fetch("/geo/yucatan_municipios_2023.json");
+    const response = await fetch(import.meta.env.BASE_URL + 'geo/yucatan_municipios_2023.json');
+
 
     if (!response.ok) {
         throw new Error("Error al cargar el GeoJSON");

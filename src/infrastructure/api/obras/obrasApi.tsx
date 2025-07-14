@@ -10,7 +10,7 @@ import type { Obra } from "../../../domain/models/Obra";
 const fetchObras = async (): Promise<Obra[]> => {
     try {
         
-        const response = await fetch('/geo/fake_obras.json');
+        const response = await fetch(import.meta.env.BASE_URL + 'geo/fake_obras.json');
         if (!response.ok) {
             throw new Error("Error al cargar las obras");
         }
