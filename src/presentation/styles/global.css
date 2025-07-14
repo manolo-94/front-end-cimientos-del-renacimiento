@@ -132,3 +132,34 @@ section:not(.hero) {
 .button-btn-modal-detalle:hover {
   background-color: #6d1233;
 }
+
+.button-btn-dorado {
+  background-color: var(--color-dorado-institucional)!important;
+  color: var(--color-gris-oscuro-institucional)!important;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button-btn-dorado:hover {
+  background-color: var(--color-dorado-oscuro-institucional)!important;
+  transform: translateY(-2px);
+}
+
+/* .button-btn-dorado {
+  background-color: var(--color-dorado-institucional)!important;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.button-btn-dorado:hover {
+  background-color: var(--color-dorado-oscuro-institucional);
+} */
