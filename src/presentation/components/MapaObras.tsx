@@ -7,6 +7,7 @@ import useGeoZona from "../../infrastructure/hooks/useGeoZona";
 import FiltroMuncipio from "./FiltroMunicipio";
 import { getMunicipios, getGeoDataFiltrada, getStyleFiltroMuncipio, centrarMapaEnMunicipio } from "../../domain/services/municipioService";
 import MarkerClusterLayer from "./MarkerClusterLayer";
+import ButtonResetMap from "./ui/ButtonResetMap";
 
 
 /**
@@ -104,6 +105,7 @@ const MapaObras = () => {
                 />
 
                 <MarkerClusterLayer />
+                <ButtonResetMap />
 
             </MapContainer>
 

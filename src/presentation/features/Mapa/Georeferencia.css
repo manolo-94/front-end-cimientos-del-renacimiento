@@ -102,3 +102,12 @@
     border: 2px solid var(--color-fondo);
     box-shadow: 0 0 5px #0003;
 }
+
+.leaflet-control-custom svg {
+  pointer-events: none;
+}
+
+.leaflet-control-custom:hover {
+  background-color: #eee;
+  border-radius: 4px;
+}
