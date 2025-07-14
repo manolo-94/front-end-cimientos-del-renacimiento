@@ -3,7 +3,7 @@ import { Card, ListGroup } from "react-bootstrap";
 import "../features/Avance/Avance.css"
 
 type CardAvanceProps = {
-    img: string;
+    img?: string;
     title: string;
     porcentaje: number;
     descripcion: string;
@@ -11,30 +11,39 @@ type CardAvanceProps = {
 
 const CardAvance: React.FC<CardAvanceProps> = ({img, title, porcentaje, descripcion}) => {
     return (
-        <Card className="avance-card" style={{ width: '18rem' }}>
-            <Card.Img 
-                variant="bottom" 
-                className="mx-auto d-block" 
-                src={img} 
-                style={{ 
-                    width: '50px',
-                    height: 'auto', 
-                    paddingTop: '1rem' 
-                    }} 
-                />
-            <Card.Body>
-                <Card.Title>{title}</Card.Title>
-                <Card.Text>
-                    {porcentaje} %
-                    <div className="barra">
-                        <div className="progreso" style={{ width: `${porcentaje}%` }}></div>
-                    </div>
-                </Card.Text>
-            </Card.Body>
-            <ListGroup className="list-group-flush">
-                <ListGroup.Item>{descripcion}</ListGroup.Item>
-            </ListGroup>
-        </Card>
+        <div className="card-avance-dashboard">
+      <div className="card-avance-header">
+        <img src={img} alt={title} className="card-avance-bg" />
+        <h3 className="card-avance-title">{title}</h3>
+      </div>
+
+      <div className="card-avance-body">
+        <div className="circle-progress">
+          <svg width="80" height="80">
+            <circle cx="40" cy="40" r="35" stroke="#eee" strokeWidth="10" fill="none" />
+            <circle
+              cx="40"
+              cy="40"
+              r="35"
+              stroke="var(--color-dorado-institucional)"
+              strokeWidth="10"
+              fill="none"
+              strokeDasharray="220"
+              strokeDashoffset={220 - (220 * porcentaje) / 100}
+              strokeLinecap="round"
+              style={{ transition: 'stroke-dashoffset 1s ease-out' }}
+            />
+            <text x="50%" y="50%" textAnchor="middle" dy=".3em" fontSize="16" fill="#333">
+              {porcentaje}%
+            </text>
+          </svg>
+        </div>
+        <p className="card-avance-desc">{descripcion}</p>
+      </div>
+    </div>
+
+
+
     )
 }
 
