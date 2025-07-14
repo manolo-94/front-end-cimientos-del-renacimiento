@@ -1,27 +1,19 @@
 .scroll-down {
-    position: absolute;
-    bottom: 20px;
-    font-size: 2rem;
-    color: black;
-    animation: bounce 2s infinite;
+  position: absolute;
+  left: 50%; /* centro horizontal */
+  transform: translateX(-50%);
+  bottom: 60px; /* separada del fondo */
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+  animation: bounce 2s infinite;
 }
 
-.arrow-down {
-    animation: bounce 2s infinite;
-    cursor: pointer;
-    z-index: 10;
-    color: black;
-}
-
-/* Animación suave tipo “rebote” */
 @keyframes bounce {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(10px);
-    }
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);  /* 👈 combinación de movimientos */
+  }
+  50% {
+    transform: translateX(-50%) translateY(10px); /* 👈 se mantiene centrada */
+  }
 }

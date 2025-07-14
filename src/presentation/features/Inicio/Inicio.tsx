@@ -8,30 +8,28 @@ import './Inicio.css'
 const Inicio: React.FC = () => {
     return (
 
-        <section id="Inicio">
-            <div className="carousel-container position-relative">
+       <section id="Inicio">
+  <div className="carousel-container position-relative">
+    <Carousel>
+      <Carousel.Item>
+        <CarouselImage src={banner} alt="First slide" />
+      </Carousel.Item>
+      <Carousel.Item>
+        <CarouselImage src={banner} alt="Second slide" />
+      </Carousel.Item>
+      <Carousel.Item>
+        <CarouselImage src={banner} alt="Third slide" />
+      </Carousel.Item>
+    </Carousel>
 
-                <Carousel>
+    {/* Flecha hacia abajo animada */}
+    <a href="#Fideicomiso" className="scroll-down">
+  <FaArrowDown size={30} />
+</a>
 
-                    <Carousel.Item>
-                        <CarouselImage src={banner} alt="First slide" />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <CarouselImage src={banner} alt="First slide" />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <CarouselImage src={banner} alt="First slide" />
-                    </Carousel.Item>
-                </Carousel>
+  </div>
+</section>
 
-                {/* Flecha hacia abajo */}
-                <div className="scroll-down bottom-0 start-50 mb-3">
-                    <FaArrowDown size={30} color="#fff" />
-                    {/* <span className="fs-1 text-white">&#8595;</span> */}
-                </div>
-
-            </div>
-        </section>
 
 
     );
