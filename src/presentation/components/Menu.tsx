@@ -7,32 +7,32 @@ const Menu: React.FC = () => {
         <>
 
             <Navbar sticky="top" expand="lg" className="bg-body-tertiary px-3">
-                <Container fluid>
+                <Container fluid className="d-flex align-items-center justify-content-between">
 
-                    {/* Logo alineado a la izquierda */}
-                    <Navbar.Brand href="#Inicio" className="d-flex align-items-center">
-                        <Image src={logo} alt="Escudo de Yucatán" className="logo-img" fluid />
+                    {/* Logo */}
+                    <Navbar.Brand href="#Inicio" className="d-flex align-items-center flex-shrink-0 me-3">
+                        <Image src={logo} alt="Escudo de Yucatán" className="logo-img" />
                     </Navbar.Brand>
 
+                    {/* Botón hamburguesa para móvil */}
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-                    {/* Botón colapsable para móvil alineado a la derecha */}
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" className="ms-auto"/>
-
-                    {/* Menú de navegación */}
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="ms-auto">
+                    {/* Menú colapsable */}
+                    <Navbar.Collapse id="basic-navbar-nav" className="flex-grow-1">
+                        <Nav className="ms-auto d-flex flex-wrap gap-2">
                             <Nav.Link href="#Inicio">Inicio</Nav.Link>
                             <Nav.Link href="#Fideicomiso">Cimientos del renacimiento</Nav.Link>
-                            <Nav.Link href="#Ejes">Ejes de trabajo</Nav.Link>
-                            <Nav.Link href="#Avance">Avance por entidad</Nav.Link>
-                            <Nav.Link href="#Mapa">Mapa de obra pública georreferenciada</Nav.Link>
-                            <Nav.Link href="#Municipios">Municipios con obras</Nav.Link>
+                            <Nav.Link href="#Ejes">Ejes</Nav.Link>
+                            <Nav.Link href="#Avance">Avance</Nav.Link>
+                            <Nav.Link href="#Mapa">Mapa</Nav.Link>
+                            <Nav.Link href="#Municipios">Municipios</Nav.Link>
                             <Nav.Link href="#Transparencia">Transparencia</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
 
                 </Container>
             </Navbar>
+
         </>
     )
 };

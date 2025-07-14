@@ -43,6 +43,11 @@ body {
   color: #333;
 }
 
+/* .navbar-nav {
+  flex-wrap: wrap;
+  gap: 0.5rem;
+} */
+
 /* color de las titulos del navbar */
 .navbar-nav a {
   color: var(--color-vino) !important;
@@ -53,21 +58,39 @@ body {
   background-color: var(--color-fondo) !important;
 }
 
+.logo-img {
+  max-height: 40px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .logo-img {
+    max-height: 32px;
+  }
+}
+
+.navbar-nav {
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.navbar-collapse {
+  flex-grow: 1;
+}
+
+.navbar-nav a {
+  color: var(--color-vino) !important;
+}
+
 h2.centrado {
   text-align: center;
 }
-
 
 footer {
   background: var(--color-vino);
   color: white;
   text-align: center;
   padding: 2rem;
-}
-
-.logo-img {
-  max-width: 50%;
-  height: auto;
 }
 
 section:not(.hero) {
@@ -109,7 +132,3 @@ section:not(.hero) {
 .button-btn-modal-detalle:hover {
   background-color: #6d1233;
 }
-
-
-
-
