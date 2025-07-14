@@ -11,3 +11,35 @@
     object-fit: cover;
     border-radius: 1rem;
 }
+
+.transparencia a.transparencia-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease;
+  border-radius: 1rem;
+}
+
+.transparencia a.transparencia-card:hover {
+  transform: translateY(-4px);
+}
+
+
+.transparencia p {
+  margin-top: 1rem;
+  font-size: 1rem;
+  text-align: center;
+  color: #333;
+}
+
+.transparencia > div {
+  text-align: center;
+  padding: 1rem;
+}
+
+
+@media (max-width: 576px) {
+  .transparencia-img {
+    height: 180px;
+  }
+}
