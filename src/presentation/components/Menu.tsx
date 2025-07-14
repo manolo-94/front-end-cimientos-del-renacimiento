@@ -27,6 +27,7 @@ const Menu: React.FC = () => {
                             <Nav.Link href="#Mapa">Mapa</Nav.Link>
                             <Nav.Link href="#Municipios">Municipios</Nav.Link>
                             <Nav.Link href="#Transparencia">Transparencia</Nav.Link>
+                            <Nav.Link href="#Contacto">Contacto</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
 
