@@ -48,11 +48,6 @@ body {
   gap: 0.5rem;
 } */
 
-/* color de las titulos del navbar */
-.navbar-nav a {
-  color: var(--color-vino) !important;
-}
-
 /* color de fondo del navbar */
 .bg-body-tertiary.navbar {
   background-color: var(--color-fondo) !important;
@@ -78,9 +73,17 @@ body {
   flex-grow: 1;
 }
 
-.navbar-nav a {
+/* color de las titulos del navbar */
+.navbar-nav a,
+.navbar-nav button {
   color: var(--color-vino) !important;
 }
+
+.navbar-nav button:hover,
+.navbar-nav a:hover {
+  color: #6d1233 !important; /* un tono más oscuro si quieres */
+}
+
 
 h2.centrado {
   text-align: center;
